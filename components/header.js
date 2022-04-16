@@ -1,8 +1,10 @@
 import Link from "next/link";
 
+import styles from "../styles/Header.module.css";
+
 export default function Header() {
     return (
-        <div>
+        <div className={styles.header}>
             <Link href="/me">
                 <button>User</button>
             </Link>
