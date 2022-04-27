@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div className={styles.header}>
             <Link href="/me">
-                <button>User</button>
+                <button>Me</button>
             </Link>
             <h1> flipthatcoin </h1>
             <Link href="/play">
