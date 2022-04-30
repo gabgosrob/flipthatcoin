@@ -12,6 +12,12 @@ export default function Header() {
             <Link href="/play">
                 <button>Play</button>
             </Link>
+            <Link href="/login">
+                <button>Login</button>
+            </Link>
+            <Link href="/signup">
+                <button>Signup</button>
+            </Link>
         </div>
     );
 }
