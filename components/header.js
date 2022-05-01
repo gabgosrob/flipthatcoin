@@ -8,7 +8,9 @@ export default function Header() {
             <Link href="/me">
                 <button>Me</button>
             </Link>
-            <h1> flipthatcoin </h1>
+            <Link href="/">
+                <h1> flipthatcoin </h1>
+            </Link>
             <Link href="/play">
                 <button>Play</button>
             </Link>

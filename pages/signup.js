@@ -1,8 +1,10 @@
+import Header from "../components/header";
 import { signup } from "../js/signup.js";
 
 export default function Signup() {
     return (
         <div>
+            <Header />
             <h1>Signup</h1>
             <div>
                 <div>Username</div>
