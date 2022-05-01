@@ -1,4 +1,5 @@
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const User = require("../../models/user.js");
 
 const mongoose = require("mongoose");
@@ -11,9 +12,9 @@ export default async function handler(req, res) {
         const user = await User.findOne({ username: req.body.username });
 
         if (user && bcrypt.compareSync(req.body.password, user.password)) {
-            res.status(200).send("Login successful");
+            res.status(200).send();
         } else {
-            res.status(500).send("Error logging in");
+            res.status(401).send();
         }
     }
 }

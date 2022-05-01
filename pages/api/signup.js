@@ -17,9 +17,9 @@ export default async function handler(req, res) {
         });
         await user.save(function (err) {
             if (err) {
-                res.status(500).send("Error creating user");
+                res.status(400).send();
             } else {
-                res.status(200).send("User created");
+                res.status(200).send();
             }
         });
     }
