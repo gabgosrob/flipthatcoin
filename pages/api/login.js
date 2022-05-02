@@ -12,7 +12,18 @@ export default async function handler(req, res) {
         const user = await User.findOne({ username: req.body.username });
 
         if (user && bcrypt.compareSync(req.body.password, user.password)) {
-            res.status(200).send();
+            const token = jwt.sign(
+                {
+                    id: user._id,
+                },
+                process.env.JWT_SECRET,
+                {
+                    expiresIn: "3d",
+                }
+            );
+            res.status(200).json({
+                token: token,
+            });
         } else {
             res.status(401).send();
         }

@@ -1,4 +1,5 @@
 import Router from "next/router";
+import Cookies from "js-cookie";
 
 export const login = async function () {
     const username = document.getElementById("username").value;
@@ -16,7 +17,12 @@ export const login = async function () {
     });
 
     if (response.status === 200) {
-        alert("Login successful");
+        const body = await response.json();
+        Cookies.set("flipthatcoin_token", body.token, {
+            expires: 3,
+            sameSite: "strict",
+        });
+        Router.push("/");
     } else {
         alert("Error logging in");
     }
