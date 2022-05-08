@@ -4,18 +4,30 @@ import { useState, useEffect } from "react";
 import { verify } from "../utils/accounts.js";
 import Leaderboard from "../components/leaderboard";
 import Header from "../components/header";
+import Loading from "../components/loading";
 import styles from "../styles/Index.module.css";
 
 export default function Home({ leaders }) {
     const [loggedIn, setLoggedIn] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true);
         verify().then((user) => {
             if (!user) {
                 setLoggedIn(false);
             }
+            setLoading(false);
         });
     }, []);
+
+    if (loading) {
+        return (
+            <div>
+                <Loading />
+            </div>
+        );
+    }
 
     return (
         <div className={styles.mainContainer}>

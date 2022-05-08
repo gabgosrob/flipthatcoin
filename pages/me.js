@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import { verify } from "../utils/accounts.js";
 import Header from "../components/header";
+import Loading from "../components/loading";
 
 export default function Me() {
     const [user, setUser] = useState(null);
@@ -20,8 +21,7 @@ export default function Me() {
     if (!user) {
         return (
             <div>
-                <Header loggedIn={true} />
-                <div>Loading...</div>
+                <Loading />
             </div>
         );
     }
