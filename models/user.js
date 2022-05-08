@@ -25,6 +25,18 @@ const userSchema = new Schema({
     },
 });
 
+userSchema.methods.toDTO = function () {
+    const obj = this.toObject();
+
+    return {
+        id: obj._id,
+        username: obj.username,
+        rating: obj.rating,
+        wins: obj.wins,
+        losses: obj.losses,
+    };
+};
+
 userSchema.methods.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.password);
 };

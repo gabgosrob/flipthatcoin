@@ -66,7 +66,7 @@ export const verify = async function () {
 
     if (response.status === 200) {
         const user = await response.json();
-        return user.id;
+        return user;
     } else {
         return false;
     }
