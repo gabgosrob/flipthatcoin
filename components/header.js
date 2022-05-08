@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { MdAccountCircle } from "react-icons/md";
+import { GiCoinflip } from "react-icons/gi";
 
 import styles from "../styles/Header.module.css";
 
@@ -6,13 +8,13 @@ export default function Header() {
     return (
         <div className={styles.header}>
             <Link href="/me">
-                <button>Me</button>
+                <MdAccountCircle size={50} />
+            </Link>
+            <Link href="/play">
+                <GiCoinflip size={50} />
             </Link>
             <Link href="/">
                 <h1> flipthatcoin </h1>
-            </Link>
-            <Link href="/play">
-                <button>Play</button>
             </Link>
             <Link href="/login">
                 <button>Login</button>

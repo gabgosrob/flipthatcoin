@@ -13,7 +13,6 @@ export default function Home({ leaders }) {
             </Head>
             <Header />
             <Leaderboard leaders={leaders} />
-            <button onClick={verify}>TESTUBG</button>
         </div>
     );
 }
