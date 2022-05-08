@@ -3,3 +3,7 @@
     align-items: center;
     gap: 12px;
 }
+
+.icon:hover {
+    cursor: pointer;
+}

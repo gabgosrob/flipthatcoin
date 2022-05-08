@@ -3,8 +3,6 @@ import Head from "next/head";
 import Leaderboard from "../components/leaderboard";
 import Header from "../components/header";
 
-import { verify } from "../utils/accounts.js";
-
 export default function Home({ leaders }) {
     return (
         <div className={styles.mainContainer}>

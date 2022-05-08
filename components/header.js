@@ -8,10 +8,10 @@ export default function Header() {
     return (
         <div className={styles.header}>
             <Link href="/me">
-                <MdAccountCircle size={50} />
+                <MdAccountCircle size={50} className={styles.icon} />
             </Link>
             <Link href="/play">
-                <GiCoinflip size={50} />
+                <GiCoinflip size={50} className={styles.icon} />
             </Link>
             <Link href="/">
                 <h1> flipthatcoin </h1>
