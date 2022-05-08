@@ -1,8 +1,8 @@
-import { logout } from "../utils/accounts.js";
 import Link from "next/link";
 import { MdAccountCircle } from "react-icons/md";
 import { GiCoinflip } from "react-icons/gi";
 
+import { logout } from "../utils/accounts.js";
 import styles from "../styles/Header.module.css";
 
 export default function Header(props) {

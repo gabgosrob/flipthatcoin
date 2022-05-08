@@ -1,5 +1,6 @@
 import Router from "next/router";
 import { useState, useEffect } from "react";
+
 import { verify } from "../utils/accounts.js";
 import Header from "../components/header";
 

@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
-import { verify } from "../utils/accounts.js";
-import styles from "../styles/Index.module.css";
 import Head from "next/head";
+import { useState, useEffect } from "react";
+
+import { verify } from "../utils/accounts.js";
 import Leaderboard from "../components/leaderboard";
 import Header from "../components/header";
+import styles from "../styles/Index.module.css";
 
 export default function Home({ leaders }) {
     const [loggedIn, setLoggedIn] = useState(true);
