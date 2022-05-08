@@ -49,3 +49,25 @@ export const login = async function () {
         alert("Error logging in");
     }
 };
+
+export const verify = async function () {
+    const token = Cookies.get("flipthatcoin_token");
+
+    if (!token) {
+        return false;
+    }
+
+    const response = await fetch("/api/verify", {
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+    });
+
+    if (response.status === 200) {
+        const user = await response.json();
+        return user.id;
+    } else {
+        return false;
+    }
+};

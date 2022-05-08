@@ -1,5 +1,5 @@
 import Header from "../components/header";
-import { login } from "../scripts/accounts.js";
+import { login } from "../utils/accounts.js";
 
 export default function Login() {
     return (

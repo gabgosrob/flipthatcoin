@@ -1,15 +1,19 @@
+import styles from "../styles/Index.module.css";
 import Head from "next/head";
 import Leaderboard from "../components/leaderboard";
 import Header from "../components/header";
 
+import { verify } from "../utils/accounts.js";
+
 export default function Home({ leaders }) {
     return (
-        <div>
+        <div className={styles.mainContainer}>
             <Head>
                 <title>flipthatcoin</title>
             </Head>
             <Header />
             <Leaderboard leaders={leaders} />
+            <button onClick={verify}>TESTUBG</button>
         </div>
     );
 }
