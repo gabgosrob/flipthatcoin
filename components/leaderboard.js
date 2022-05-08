@@ -1,4 +1,4 @@
-import styles from "../styles/Leaderboard.module.css";
+import styles from "../styles/components/Leaderboard.module.css";
 
 export default function Leaderboard(props) {
     return (

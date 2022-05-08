@@ -3,7 +3,7 @@ import { MdAccountCircle } from "react-icons/md";
 import { GiCoinflip } from "react-icons/gi";
 
 import { logout } from "../utils/accounts.js";
-import styles from "../styles/Header.module.css";
+import styles from "../styles/components/Header.module.css";
 
 export default function Header(props) {
     if (props.loggedIn) {

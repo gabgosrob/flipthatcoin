@@ -5,7 +5,7 @@ import { verify } from "../utils/accounts.js";
 import Leaderboard from "../components/leaderboard";
 import Header from "../components/header";
 import Loading from "../components/loading";
-import styles from "../styles/Index.module.css";
+import styles from "../styles/pages/Index.module.css";
 
 export default function Home({ leaders }) {
     const [loggedIn, setLoggedIn] = useState(true);
