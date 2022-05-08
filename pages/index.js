@@ -1,15 +1,27 @@
+import { useState, useEffect } from "react";
+import { verify } from "../utils/accounts.js";
 import styles from "../styles/Index.module.css";
 import Head from "next/head";
 import Leaderboard from "../components/leaderboard";
 import Header from "../components/header";
 
 export default function Home({ leaders }) {
+    const [loggedIn, setLoggedIn] = useState(true);
+
+    useEffect(() => {
+        verify().then((user) => {
+            if (!user) {
+                setLoggedIn(false);
+            }
+        });
+    }, []);
+
     return (
         <div className={styles.mainContainer}>
             <Head>
                 <title>flipthatcoin</title>
             </Head>
-            <Header />
+            <Header loggedIn={loggedIn} />
             <Leaderboard leaders={leaders} />
         </div>
     );

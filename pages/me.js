@@ -19,7 +19,7 @@ export default function Me() {
     if (!user) {
         return (
             <div>
-                <Header />
+                <Header loggedIn={true} />
                 <div>Loading...</div>
             </div>
         );
@@ -27,7 +27,7 @@ export default function Me() {
 
     return (
         <div>
-            <Header />
+            <Header loggedIn={true} />
             <div>This is your user page. Hello!</div>
             <div>{user.id}</div>
             <div>{user.username}</div>

@@ -50,6 +50,12 @@ export const login = async function () {
     }
 };
 
+export const logout = async function () {
+    Cookies.remove("flipthatcoin_token");
+    Router.push("/");
+    Router.reload();
+};
+
 export const verify = async function () {
     const token = Cookies.get("flipthatcoin_token");
 
