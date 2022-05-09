@@ -1,6 +1,6 @@
 import styles from "../styles/components/Loading.module.css";
 
-export default function Loading() {
+export default function Load() {
     return (
         <div>
             <div className={styles.ldsRing}>
