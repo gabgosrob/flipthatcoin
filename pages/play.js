@@ -19,18 +19,22 @@ export default function Play() {
         });
     }, []);
 
+    let page;
+
     if (!user) {
-        return (
+        page = (
             <div className={pageStyles.mainContainer}>
                 <Loading />
             </div>
         );
+    } else {
+        page = (
+            <div className={pageStyles.mainContainer}>
+                <Header loggedIn={true} />
+                <div>This is the play page.</div>
+            </div>
+        );
     }
 
-    return (
-        <div className={pageStyles.mainContainer}>
-            <Header loggedIn={true} />
-            <div>This is the play page.</div>
-        </div>
-    );
+    return page;
 }

@@ -6,19 +6,18 @@ import { logout } from "../utils/accounts.js";
 import styles from "../styles/components/Header.module.css";
 
 export default function Header(props) {
+    let registration;
     if (props.loggedIn) {
-        return (
-            <div className={styles.headerContainer}>
-                <Link href="/me">
-                    <MdAccountCircle size={50} className={styles.icon} />
+        registration = <button onClick={logout}>Logout</button>;
+    } else {
+        registration = (
+            <div>
+                <Link href="/login">
+                    <button>Login</button>
                 </Link>
-                <Link href="/play">
-                    <GiCoinflip size={50} className={styles.icon} />
+                <Link href="/signup">
+                    <button>Signup</button>
                 </Link>
-                <Link href="/">
-                    <h1 className={styles.title}> flipthatcoin </h1>
-                </Link>
-                <button onClick={logout}>Logout</button>
             </div>
         );
     }
@@ -34,12 +33,7 @@ export default function Header(props) {
             <Link href="/">
                 <h1 className={styles.title}> flipthatcoin </h1>
             </Link>
-            <Link href="/login">
-                <button>Login</button>
-            </Link>
-            <Link href="/signup">
-                <button>Signup</button>
-            </Link>
+            {registration}
         </div>
     );
 }

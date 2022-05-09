@@ -22,23 +22,27 @@ export default function Home({ leaders }) {
         });
     }, []);
 
+    let page;
+
     if (loading) {
-        return (
+        page = (
             <div className={pageStyles.mainContainer}>
                 <Loading />
             </div>
         );
+    } else {
+        page = (
+            <div className={pageStyles.mainContainer}>
+                <Head>
+                    <title>flipthatcoin</title>
+                </Head>
+                <Header loggedIn={loggedIn} />
+                <Leaderboard leaders={leaders} />
+            </div>
+        );
     }
 
-    return (
-        <div className={pageStyles.mainContainer}>
-            <Head>
-                <title>flipthatcoin</title>
-            </Head>
-            <Header loggedIn={loggedIn} />
-            <Leaderboard leaders={leaders} />
-        </div>
-    );
+    return page;
 }
 
 export async function getStaticProps() {

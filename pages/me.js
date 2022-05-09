@@ -19,21 +19,25 @@ export default function Me() {
         });
     }, []);
 
+    let page;
+
     if (!user) {
-        return (
+        page = (
             <div className={pageStyles.mainContainer}>
                 <Loading />
             </div>
         );
+    } else {
+        page = (
+            <div className={pageStyles.mainContainer}>
+                <Header loggedIn={true} />
+                <div>This is your user page. Hello!</div>
+                <div>{user.id}</div>
+                <div>{user.username}</div>
+                <div>{user.rating}</div>
+            </div>
+        );
     }
 
-    return (
-        <div className={pageStyles.mainContainer}>
-            <Header loggedIn={true} />
-            <div>This is your user page. Hello!</div>
-            <div>{user.id}</div>
-            <div>{user.username}</div>
-            <div>{user.rating}</div>
-        </div>
-    );
+    return page;
 }
