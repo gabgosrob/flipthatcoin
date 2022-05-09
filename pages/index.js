@@ -5,6 +5,7 @@ import { verify } from "../utils/accounts.js";
 import Leaderboard from "../components/leaderboard";
 import Header from "../components/header";
 import Loading from "../components/loading";
+import pageStyles from "../styles/pages/Page.module.css";
 import styles from "../styles/pages/Index.module.css";
 
 export default function Home({ leaders }) {
@@ -23,14 +24,14 @@ export default function Home({ leaders }) {
 
     if (loading) {
         return (
-            <div>
+            <div className={pageStyles.mainContainer}>
                 <Loading />
             </div>
         );
     }
 
     return (
-        <div className={styles.mainContainer}>
+        <div className={pageStyles.mainContainer}>
             <Head>
                 <title>flipthatcoin</title>
             </Head>

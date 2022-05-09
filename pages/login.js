@@ -1,9 +1,10 @@
 import { login } from "../utils/accounts.js";
 import Header from "../components/header";
+import pageStyles from "../styles/pages/Page.module.css";
 
 export default function Login() {
     return (
-        <div>
+        <div className={pageStyles.mainContainer}>
             <Header />
             <h1>Login</h1>
             <div>

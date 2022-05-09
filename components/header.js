@@ -8,7 +8,7 @@ import styles from "../styles/components/Header.module.css";
 export default function Header(props) {
     if (props.loggedIn) {
         return (
-            <div className={styles.header}>
+            <div className={styles.headerContainer}>
                 <Link href="/me">
                     <MdAccountCircle size={50} className={styles.icon} />
                 </Link>
@@ -16,7 +16,7 @@ export default function Header(props) {
                     <GiCoinflip size={50} className={styles.icon} />
                 </Link>
                 <Link href="/">
-                    <h1> flipthatcoin </h1>
+                    <h1 className={styles.title}> flipthatcoin </h1>
                 </Link>
                 <button onClick={logout}>Logout</button>
             </div>
@@ -24,7 +24,7 @@ export default function Header(props) {
     }
 
     return (
-        <div className={styles.header}>
+        <div className={styles.headerContainer}>
             <Link href="/me">
                 <MdAccountCircle size={50} className={styles.icon} />
             </Link>
@@ -32,7 +32,7 @@ export default function Header(props) {
                 <GiCoinflip size={50} className={styles.icon} />
             </Link>
             <Link href="/">
-                <h1> flipthatcoin </h1>
+                <h1 className={styles.title}> flipthatcoin </h1>
             </Link>
             <Link href="/login">
                 <button>Login</button>

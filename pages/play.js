@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { verify } from "../utils/accounts.js";
 import Header from "../components/header";
 import Loading from "../components/loading";
+import pageStyles from "../styles/pages/Page.module.css";
 
 export default function Play() {
     const [user, setUser] = useState(null);
@@ -20,14 +21,14 @@ export default function Play() {
 
     if (!user) {
         return (
-            <div>
+            <div className={pageStyles.mainContainer}>
                 <Loading />
             </div>
         );
     }
 
     return (
-        <div>
+        <div className={pageStyles.mainContainer}>
             <Header loggedIn={true} />
             <div>This is the play page.</div>
         </div>

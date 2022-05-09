@@ -1,7 +1,11 @@
-.header {
+.headerContainer {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.title:hover {
+    cursor: pointer;
 }
 
 .icon:hover {
