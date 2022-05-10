@@ -12,10 +12,10 @@ export default function Header(props) {
     } else {
         registration = (
             <div>
-                <Link href="/login">
+                <Link href="/login" passHref>
                     <button>Login</button>
                 </Link>
-                <Link href="/signup">
+                <Link href="/signup" passHref>
                     <button>Signup</button>
                 </Link>
             </div>
@@ -24,13 +24,13 @@ export default function Header(props) {
 
     return (
         <div className={styles.headerContainer}>
-            <Link href="/me">
+            <Link href="/me" passHref>
                 <MdAccountCircle size={50} className={styles.icon} />
             </Link>
-            <Link href="/play">
+            <Link href="/play" passHref>
                 <GiCoinflip size={50} className={styles.icon} />
             </Link>
-            <Link href="/">
+            <Link href="/" passHref>
                 <h1 className={styles.title}> flipthatcoin </h1>
             </Link>
             {registration}
