@@ -3,7 +3,7 @@ import styles from "../styles/components/Leaderboard.module.css";
 export default function Leaderboard(props) {
     return (
         <div>
-            <h2>Leaderboard</h2>
+            <h2 className={styles.title}>Leaderboard</h2>
             <table>
                 <thead>
                     <tr>
@@ -14,8 +14,8 @@ export default function Leaderboard(props) {
                 </thead>
                 <tbody>
                     {props.leaders.map((user) => (
-                        <tr key={user.name}>
-                            <td>{user.name}</td>
+                        <tr key={user.username}>
+                            <td>{user.username}</td>
                             <td>{user.rating}</td>
                             <td>{user.wins}</td>
                         </tr>
