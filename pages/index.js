@@ -46,7 +46,7 @@ export default function Home({ leaders }) {
     return page;
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const leaders = await getLeaders();
 
     return {
