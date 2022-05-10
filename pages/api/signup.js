@@ -8,6 +8,13 @@ mongoose.connect(
 
 export default async function handler(req, res) {
     if (req.method === "POST") {
+        if (req.body.username.length < 3 || req.body.username.length > 14) {
+            return res.status(401).send();
+        }
+        if (req.body.password.length < 3 || req.body.password.length > 30) {
+            return res.status(401).send();
+        }
+
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
 
@@ -17,9 +24,9 @@ export default async function handler(req, res) {
         });
         await user.save(function (err) {
             if (err) {
-                res.status(400).send();
+                return res.status(400).send();
             } else {
-                res.status(200).send();
+                return res.status(200).send();
             }
         });
     }
