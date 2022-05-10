@@ -16,7 +16,7 @@ export default function Leaderboard(props) {
                 <tbody className={styles.body}>
                     {props.leaders.map((user, position) => (
                         <tr key={user.username} className={styles.row}>
-                            <td>{position + 1}</td>
+                            <td>{position + 1}.</td>
                             <td>{user.username}</td>
                             <td>{user.rating}</td>
                             <td>{user.wins}</td>
