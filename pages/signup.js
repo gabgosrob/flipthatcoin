@@ -9,7 +9,7 @@ export default function Signup() {
     return (
         <div className={pageStyles.mainContainer}>
             <Header />
-            <h1 className={styles.title}>Signup</h1>
+            <h2 className={styles.title}>Signup</h2>
             <div>
                 <div>Username</div>
                 <input type="text" id="username" />

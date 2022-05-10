@@ -9,7 +9,7 @@ export default function Login() {
     return (
         <div className={pageStyles.mainContainer}>
             <Header />
-            <h1 className={styles.title}>Login</h1>
+            <h2 className={styles.title}>Login</h2>
             <div>
                 <div>Username</div>
                 <input type="text" id="username" />
