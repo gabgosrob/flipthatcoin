@@ -32,7 +32,7 @@ export default function Me() {
         page = (
             <div className={pageStyles.mainContainer}>
                 <Header loggedIn={true} />
-                <h2 className={styles.title}>{user.username}'s stats</h2>
+                <h2 className={styles.title}>{user.username}&rsquo;s stats</h2>
                 <div className={styles.statContainer}>
                     <h3 className={styles.subtitle}>Rating</h3>
                     <div>{user.rating}</div>
