@@ -1,0 +1,27 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.playerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.gameContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.title {
+    margin: 0;
+}
+
+.subtitle {
+    margin: 0;
+}
