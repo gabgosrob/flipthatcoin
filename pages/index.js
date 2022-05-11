@@ -15,12 +15,17 @@ export default function Home({ leaders }) {
 
     useEffect(() => {
         setLoading(true);
-        verify().then((user) => {
-            if (!user) {
+        verify()
+            .then((user) => {
+                if (!user) {
+                    setLoggedIn(false);
+                }
+                setLoading(false);
+            })
+            .catch((err) => {
                 setLoggedIn(false);
-            }
-            setLoading(false);
-        });
+                setLoading(false);
+            });
     }, []);
 
     let page;
