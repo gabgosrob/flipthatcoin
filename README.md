@@ -1,10 +1,10 @@
 # flipthatcoin ![Vercel](https://vercelbadge.vercel.app/api/gabgosrob/flipthatcoin)
 
-This is a competitive coinflipping web application build using [Next.js](https://nextjs.org/).
+This is a competitive coinflipping web application built using [Next.js](https://nextjs.org/).
 
 ## Tools
 
-The application was built on the [Next.js](https://www.npmjs.com/package/next) framework and deployed with [Vercel](https://vercel.com).
+The application was built on the [Next.js](https://www.npmjs.com/package/next) framework, which uses [React](https://www.npmjs.com/package/react). It was then deployed with [Vercel](https://vercel.com).
 
 On the frontend, [js-cookie](https://www.npmjs.com/package/js-cookie) and [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) were used for user authentication and authorization.
 
