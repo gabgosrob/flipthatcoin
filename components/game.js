@@ -33,7 +33,13 @@ export default function Game(props) {
                     <div className={styles.playerContainer}>
                         <h2 className={styles.title}>YOURSELF</h2>
                         <h3 className={styles.subtitle}>Username</h3>
-                        <div>{lastGame.username}</div>
+                        <div
+                            className={
+                                lastGame.result ? styles.win : styles.loss
+                            }
+                        >
+                            {lastGame.username}
+                        </div>
                         <h3 className={styles.subtitle}>New Rating</h3>
                         <div>{lastGame.newRating}</div>
                         <h3 className={styles.subtitle}>Change</h3>
@@ -46,7 +52,13 @@ export default function Game(props) {
                     <div className={styles.playerContainer}>
                         <h2 className={styles.title}>OPPONENT</h2>
                         <h3 className={styles.subtitle}>Username</h3>
-                        <div>{lastGame.opponentUsername}</div>
+                        <div
+                            className={
+                                lastGame.result ? styles.loss : styles.win
+                            }
+                        >
+                            {lastGame.opponentUsername}
+                        </div>
                         <h3 className={styles.subtitle}>New Rating</h3>
                         <div>{lastGame.opponentNewRating}</div>
                         <h3 className={styles.subtitle}>Change</h3>

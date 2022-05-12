@@ -25,3 +25,11 @@
 .subtitle {
     margin: 0;
 }
+
+.win {
+    color: green;
+}
+
+.loss {
+    color: red;
+}
