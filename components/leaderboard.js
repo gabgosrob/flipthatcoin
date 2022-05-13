@@ -17,7 +17,9 @@ export default function Leaderboard(props) {
                     {props.leaders.map((user, position) => (
                         <tr key={user.username} className={styles.row}>
                             <td>{position + 1}.</td>
-                            <td>{user.username}</td>
+                            <td>
+                                {user.username} {position == 0 ? "👑" : ""}
+                            </td>
                             <td>{user.rating}</td>
                             <td>{user.wins}</td>
                         </tr>
