@@ -6,7 +6,7 @@ mongoose.connect(
 );
 
 export const getLeaders = async function () {
-    const topUsersResult = await User.find({}).sort({ rating: -1 }).limit(10);
+    const topUsersResult = await User.find({}).sort({ rating: -1 }).limit(30);
     const topUsers = topUsersResult.map((user) => user.toDTO());
 
     return JSON.parse(JSON.stringify(topUsers));
