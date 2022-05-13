@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const EloRating = require("elo-rating");
 
 const User = require("../../models/user.js");
 
@@ -45,30 +44,32 @@ const play = async (user) => {
     opponent = opponent[0];
 
     const result = Math.random() < 0.5;
-    const newRatings = EloRating.calculate(
-        user.rating,
-        opponent.rating,
-        result
-    );
+
+    const newPlayerRating = result ? user.rating + 30 : user.rating - 30;
+    const newOpponentRating = result
+        ? opponent.rating - 30
+        : opponent.rating + 30;
+    const ratingDelta = result ? 30 : -30;
+    const opponentRatingDelta = result ? -30 : 30;
 
     await User.findByIdAndUpdate(user._id, {
-        rating: newRatings.playerRating,
+        rating: newPlayerRating,
         wins: user.wins + (result ? 1 : 0),
         losses: user.losses + (result ? 0 : 1),
     });
     await User.findByIdAndUpdate(opponent._id, {
-        rating: newRatings.opponentRating,
+        rating: newOpponentRating,
         wins: opponent.wins + (result ? 0 : 1),
         losses: opponent.losses + (result ? 1 : 0),
     });
 
     return {
         opponentUsername: opponent.username,
-        opponentNewRating: newRatings.opponentRating,
-        opponentRatingDelta: newRatings.opponentRating - opponent.rating,
+        opponentNewRating: newOpponentRating,
+        opponentRatingDelta: opponentRatingDelta,
         username: user.username,
-        newRating: newRatings.playerRating,
-        ratingDelta: newRatings.playerRating - user.rating,
+        newRating: newPlayerRating,
+        ratingDelta: ratingDelta,
         result: result,
     };
 };

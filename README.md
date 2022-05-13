@@ -8,7 +8,7 @@ The application was built on the [Next.js](https://www.npmjs.com/package/next) f
 
 On the frontend, [js-cookie](https://www.npmjs.com/package/js-cookie) and [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) were used for user authentication and authorization.
 
-In the backend, [mongoose](https://www.npmjs.com/package/mongoose) and [bcryptjs](https://www.npmjs.com/package/bcryptjs) were used to store and manipulate user data securely. The [elo-rating](https://www.npmjs.com/package/elo-rating) library was used for the rating calculations after coinflips.
+In the backend, [mongoose](https://www.npmjs.com/package/mongoose) and [bcryptjs](https://www.npmjs.com/package/bcryptjs) were used to store and manipulate user data securely.
 
 ## Setup
 
