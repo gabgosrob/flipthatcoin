@@ -28,7 +28,7 @@ export default async function handler(req, res) {
                         })
                         .catch((err) => {
                             console.log(err);
-                            return res.status(500).send(err);
+                            return res.status(405).send(err);
                         });
                 }
             });
@@ -37,6 +37,10 @@ export default async function handler(req, res) {
 }
 
 const play = async (user) => {
+    if (user.games_left <= 0) {
+        throw new Error(`No games left for ${user.username}.`);
+    }
+
     let opponent = await User.aggregate([
         { $match: { _id: { $ne: user._id } } },
         { $sample: { size: 1 } },
@@ -56,6 +60,7 @@ const play = async (user) => {
         rating: newPlayerRating,
         wins: user.wins + (result ? 1 : 0),
         losses: user.losses + (result ? 0 : 1),
+        games_left: user.games_left - 1,
     });
     await User.findByIdAndUpdate(opponent._id, {
         rating: newOpponentRating,

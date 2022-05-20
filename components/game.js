@@ -15,7 +15,9 @@ export default function Game(props) {
                 Authorization: `Bearer ${token}`,
             },
         });
-
+        if (response.status === 405) {
+            return alert("No games left for this user.");
+        }
         if (response.status != 200) {
             return alert("Something went wrong");
         }
