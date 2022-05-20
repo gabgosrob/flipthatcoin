@@ -27,7 +27,6 @@ export default async function handler(req, res) {
                             return res.status(200).json(game);
                         })
                         .catch((err) => {
-                            console.log(err);
                             return res.status(405).send(err);
                         });
                 }
