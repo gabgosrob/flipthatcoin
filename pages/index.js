@@ -6,6 +6,7 @@ import { getLeaders } from "../utils/leaderboard.js";
 import Leaderboard from "../components/leaderboard";
 import Header from "../components/header";
 import Loading from "../components/loading";
+import ResetCounter from "../components/resetCounter";
 import pageStyles from "../styles/pages/Page.module.css";
 import styles from "../styles/pages/Index.module.css";
 
@@ -43,6 +44,7 @@ export default function Home({ leaders }) {
                     <title>flipthatcoin</title>
                 </Head>
                 <Header loggedIn={loggedIn} />
+                <ResetCounter />
                 <Leaderboard leaders={leaders} />
             </div>
         );

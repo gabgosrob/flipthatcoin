@@ -45,6 +45,10 @@ export default function Me() {
                     <h3 className={styles.subtitle}>Losses</h3>
                     <div>{user.losses}</div>
                 </div>
+                <div className={styles.statContainer}>
+                    <h3 className={styles.subtitle}>Flips available</h3>
+                    <div>{user.games_left}</div>
+                </div>
             </div>
         );
     }
