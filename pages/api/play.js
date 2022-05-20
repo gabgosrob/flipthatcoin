@@ -76,5 +76,6 @@ const play = async (user) => {
         newRating: newPlayerRating,
         ratingDelta: ratingDelta,
         result: result,
+        gamesLeft: user.games_left - 1,
     };
 };

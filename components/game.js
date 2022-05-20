@@ -31,46 +31,49 @@ export default function Game(props) {
     } else {
         return (
             <div className={styles.mainContainer}>
-                <div className={styles.gameContainer}>
-                    <div className={styles.playerContainer}>
-                        <h2 className={styles.title}>YOURSELF</h2>
-                        <h3 className={styles.subtitle}>Username</h3>
-                        <div
-                            className={
-                                lastGame.result ? styles.win : styles.loss
-                            }
-                        >
-                            {lastGame.username}
+                <div>Games left: {lastGame.gamesLeft}</div>
+                <div className={styles.resultsContainer}>
+                    <div className={styles.gameContainer}>
+                        <div className={styles.playerContainer}>
+                            <h2 className={styles.title}>YOURSELF</h2>
+                            <h3 className={styles.subtitle}>Username</h3>
+                            <div
+                                className={
+                                    lastGame.result ? styles.win : styles.loss
+                                }
+                            >
+                                {lastGame.username}
+                            </div>
+                            <h3 className={styles.subtitle}>New Rating</h3>
+                            <div>{lastGame.newRating}</div>
+                            <h3 className={styles.subtitle}>Change</h3>
+                            <div>
+                                {lastGame.ratingDelta > 0 ? "+" : ""}
+                                {lastGame.ratingDelta}
+                            </div>
                         </div>
-                        <h3 className={styles.subtitle}>New Rating</h3>
-                        <div>{lastGame.newRating}</div>
-                        <h3 className={styles.subtitle}>Change</h3>
-                        <div>
-                            {lastGame.ratingDelta > 0 ? "+" : ""}
-                            {lastGame.ratingDelta}
+                        <div>{lastGame.result ? "WIN!!!" : "LOSS!!!"}</div>
+                        <div className={styles.playerContainer}>
+                            <h2 className={styles.title}>OPPONENT</h2>
+                            <h3 className={styles.subtitle}>Username</h3>
+                            <div
+                                className={
+                                    lastGame.result ? styles.loss : styles.win
+                                }
+                            >
+                                {lastGame.opponentUsername}
+                            </div>
+                            <h3 className={styles.subtitle}>New Rating</h3>
+                            <div>{lastGame.opponentNewRating}</div>
+                            <h3 className={styles.subtitle}>Change</h3>
+                            <div>
+                                {lastGame.opponentRatingDelta > 0 ? "+" : ""}
+                                {lastGame.opponentRatingDelta}
+                            </div>
                         </div>
                     </div>
-                    <div>{lastGame.result ? "WIN!!!" : "LOSS!!!"}</div>
-                    <div className={styles.playerContainer}>
-                        <h2 className={styles.title}>OPPONENT</h2>
-                        <h3 className={styles.subtitle}>Username</h3>
-                        <div
-                            className={
-                                lastGame.result ? styles.loss : styles.win
-                            }
-                        >
-                            {lastGame.opponentUsername}
-                        </div>
-                        <h3 className={styles.subtitle}>New Rating</h3>
-                        <div>{lastGame.opponentNewRating}</div>
-                        <h3 className={styles.subtitle}>Change</h3>
-                        <div>
-                            {lastGame.opponentRatingDelta > 0 ? "+" : ""}
-                            {lastGame.opponentRatingDelta}
-                        </div>
-                    </div>
+                    <button onClick={play}>Click here to play</button>
                 </div>
-                <button onClick={play}>Click here to play</button>
             </div>
         );
     }
