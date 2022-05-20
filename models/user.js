@@ -23,6 +23,10 @@ const userSchema = new Schema({
         type: Number,
         default: 0,
     },
+    games_left: {
+        type: Number,
+        default: 10,
+    },
 });
 
 userSchema.methods.toDTO = function () {
@@ -34,6 +38,7 @@ userSchema.methods.toDTO = function () {
         rating: obj.rating,
         wins: obj.wins,
         losses: obj.losses,
+        games_left: obj.games_left,
     };
 };
 
