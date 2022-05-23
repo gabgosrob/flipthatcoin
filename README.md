@@ -4,7 +4,7 @@ This is a competitive coinflipping web application built using [Next.js](https:/
 
 ## Tools
 
-The application was built on the [Next.js](https://www.npmjs.com/package/next) framework, which uses [React](https://www.npmjs.com/package/react). It was then deployed with [Vercel](https://vercel.com). [MongoDB](https://www.npmjs.com/package/mongodb) was used for the database, which is hosted in the cloud on [Atlas](https://www.mongodb.com/atlas/database).
+The application was built on the [Next.js](https://www.npmjs.com/package/next) framework, which uses [React](https://www.npmjs.com/package/react). It was then deployed with [Vercel](https://vercel.com). [MongoDB](https://www.npmjs.com/package/mongodb) was used for the database, which is hosted in the cloud on [Atlas](https://www.mongodb.com/atlas/database). Cron jobs were setup using [EasyCron](https://www.easycron.com).
 
 On the frontend, [js-cookie](https://www.npmjs.com/package/js-cookie) and [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) were used for user authentication and authorization.
 
