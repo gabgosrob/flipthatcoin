@@ -33,9 +33,13 @@ export default function Game(props) {
 
     if (!lastGame) {
         return (
-            <div>
+            <div className={styles.mainContainer}>
                 <ToastContainer />
                 <button onClick={play}>Click here to play</button>
+                <div className={styles.disclaimer}>
+                    Please do not setup a bot/script, as this application is
+                    hosted for free as a hobby project.
+                </div>
             </div>
         );
     } else {

@@ -25,6 +25,13 @@
     gap: 30px;
 }
 
+.disclaimer {
+    max-width: 300px;
+    margin-top: 20px;
+    text-align: center;
+    color: red;
+}
+
 .title {
     margin: 0;
 }
