@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Cookies from "js-cookie";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import styles from "../styles/components/Game.module.css";
 
@@ -16,10 +18,13 @@ export default function Game(props) {
             },
         });
         if (response.status === 405) {
-            return alert("No games left for this user.");
+            return toast.warn(
+                "No more games available, please wait until reset.",
+                { theme: "dark" }
+            );
         }
         if (response.status != 200) {
-            return alert("Something went wrong");
+            return toast.warn("Something went wrong."), { theme: "dark" };
         }
 
         const game = await response.json();
@@ -27,10 +32,16 @@ export default function Game(props) {
     };
 
     if (!lastGame) {
-        return <button onClick={play}>Click here to play</button>;
+        return (
+            <div>
+                <ToastContainer />
+                <button onClick={play}>Click here to play</button>
+            </div>
+        );
     } else {
         return (
             <div className={styles.mainContainer}>
+                <ToastContainer />
                 <div>Games left: {lastGame.gamesLeft}</div>
                 <div className={styles.resultsContainer}>
                     <div className={styles.gameContainer}>
