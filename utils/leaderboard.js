@@ -1,13 +1,13 @@
-const User = require("../models/user.js");
+const User = require('../models/user.js')
 
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 mongoose.connect(
-    `mongodb+srv://krikite:${process.env.MONGO_PASSWORD}@flipthatcoin.9xuoc.mongodb.net/flipthatcoin?retryWrites=true&w=majority`
-);
+  `mongodb+srv://krikite:${process.env.MONGO_PASSWORD}@flipthatcoin.9xuoc.mongodb.net/flipthatcoin?retryWrites=true&w=majority`
+)
 
 export const getLeaders = async function () {
-    const topUsersResult = await User.find({}).sort({ rating: -1 }).limit(30);
-    const topUsers = topUsersResult.map((user) => user.toDTO());
+  const topUsersResult = await User.find({}).sort({ rating: -1 }).limit(30)
+  const topUsers = topUsersResult.map((user) => user.toDTO())
 
-    return JSON.parse(JSON.stringify(topUsers));
-};
+  return JSON.parse(JSON.stringify(topUsers))
+}

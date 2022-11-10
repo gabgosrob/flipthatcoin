@@ -1,19 +1,19 @@
 .leaderboardContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-    margin: 0 0 20px;
+  margin: 0 0 20px;
 }
 
 .leaderboard {
-    table-layout: fixed;
-    width: 550px;
-    border-collapse: collapse;
+  table-layout: fixed;
+  width: 550px;
+  border-collapse: collapse;
 }
 
 .body td {
-    text-align: center;
+  text-align: center;
 }
